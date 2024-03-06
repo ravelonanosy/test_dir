@@ -1,7 +1,7 @@
 version: '3'
 services:
-  nra:
-    image: localhost:5000/nra:local
+  product-service:
+    build: ./product
     volumes:
       - ./product:/usr/src/app
     ports:
@@ -13,4 +13,4 @@ services:
     ports:
       - 5001:8000
     depends_on:
-      - nra
+      - product-service
